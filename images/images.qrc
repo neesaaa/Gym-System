@@ -1,0 +1,58 @@
+<RCC>
+    <qresource prefix="/login">
+        <file>samuel-girven-VJ2s0c20qCo-unsplash.jpg</file>
+        <file>dashboard.jpeg</file>
+        <file>Anime.jpeg</file>
+        <file>Anime (2).jpeg</file>
+        <file>Warrior.jpeg</file>
+        <file>1.jpg</file>
+        <file>2.jpg</file>
+        <file>Admin.jpg</file>
+        <file>User.jpg</file>
+        <file>team.png</file>
+        <file>Active large .jpg</file>
+        <file>Active admin ✅.jpg</file>
+        <file>Active user ✅.jpg</file>
+        <file>Active user final.jpg</file>
+        <file>left_arrow.png</file>
+        <file>right_arrow.png</file>
+        <file>delete.png</file>
+        <file>diskette.png</file>
+        <file>eye.png</file>
+        <file>interface.png</file>
+        <file>free.png</file>
+        <file>delete(2).png</file>
+        <file>edit.png</file>
+        <file>floppy-disk.png</file>
+        <file>money.png</file>
+        <file>diskette(1).png</file>
+        <file>trash.png</file>
+        <file>written-paper.png</file>
+        <file>floppy-disk (copy 1).png</file>
+        <file>floppy-disk(2).png</file>
+        <file>pencil.png</file>
+        <file>recycle-bin.png</file>
+        <file>delete(2) (copy 1).png</file>
+        <file>manager.png</file>
+        <file>admin.png</file>
+        <file>new.png</file>
+        <file>magnifier.png</file>
+        <file>safe.png</file>
+        <file>vecteezy_dark-image-of-a-steel-bank-vault_25272729.jpg</file>
+        <file>vecteezy_dark-image-of-a-steel-bank-vault_25272729(1).jpg</file>
+        <file>printer.png</file>
+        <file>safe-box.png</file>
+        <file>document.png</file>
+        <file>dumble.png</file>
+        <file>teamwork.png</file>
+        <file>fingerprint.png</file>
+        <file>flamingo.png</file>
+        <file>follower.png</file>
+        <file>trainer.png</file>
+        <file>correct.png</file>
+        <file>cross.png</file>
+        <file>employee.png</file>
+        <file>arrow-down.png</file>
+        <file>frontdesk.jpeg</file>
+    </qresource>
+</RCC>
