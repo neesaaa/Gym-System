@@ -43,6 +43,7 @@ constexpr auto qt_meta_stringdata_CLASSdashboardENDCLASS = QtMocHelpers::stringD
     "safe",
     "sheets",
     "emp",
+    "ezn_khazna",
     "disableButtons_signal",
     "memberClosedSignal",
     "user_closed",
@@ -52,7 +53,8 @@ constexpr auto qt_meta_stringdata_CLASSdashboardENDCLASS = QtMocHelpers::stringD
     "member_enable",
     "disableButtons",
     "safe_click",
-    "sheet_click"
+    "sheet_click",
+    "ezn_slot"
 );
 #else  // !QT_MOC_HAS_STRINGDATA
 #error "qtmochelpers.h not found or too old."
@@ -65,32 +67,34 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSdashboardENDCLASS[] = {
       12,       // revision
        0,       // classname
        0,    0, // classinfo
-      16,   14, // methods
+      18,   14, // methods
        0,    0, // properties
        0,    0, // enums/sets
        0,    0, // constructors
        0,       // flags
-       9,       // signalCount
+      10,       // signalCount
 
  // signals: name, argc, parameters, tag, flags, initial metatype offsets
-       1,    0,  110,    2, 0x06,    1 /* Public */,
-       3,    0,  111,    2, 0x06,    2 /* Public */,
-       4,    0,  112,    2, 0x06,    3 /* Public */,
-       5,    0,  113,    2, 0x06,    4 /* Public */,
-       6,    0,  114,    2, 0x06,    5 /* Public */,
-       7,    0,  115,    2, 0x06,    6 /* Public */,
-       8,    0,  116,    2, 0x06,    7 /* Public */,
-       9,    0,  117,    2, 0x06,    8 /* Public */,
-      10,    0,  118,    2, 0x06,    9 /* Public */,
+       1,    0,  122,    2, 0x06,    1 /* Public */,
+       3,    0,  123,    2, 0x06,    2 /* Public */,
+       4,    0,  124,    2, 0x06,    3 /* Public */,
+       5,    0,  125,    2, 0x06,    4 /* Public */,
+       6,    0,  126,    2, 0x06,    5 /* Public */,
+       7,    0,  127,    2, 0x06,    6 /* Public */,
+       8,    0,  128,    2, 0x06,    7 /* Public */,
+       9,    0,  129,    2, 0x06,    8 /* Public */,
+      10,    0,  130,    2, 0x06,    9 /* Public */,
+      11,    0,  131,    2, 0x06,   10 /* Public */,
 
  // slots: name, argc, parameters, tag, flags, initial metatype offsets
-      11,    0,  119,    2, 0x08,   10 /* Private */,
-      12,    0,  120,    2, 0x08,   11 /* Private */,
-      13,    0,  121,    2, 0x08,   12 /* Private */,
-      14,    0,  122,    2, 0x08,   13 /* Private */,
-      15,    0,  123,    2, 0x08,   14 /* Private */,
-      16,    0,  124,    2, 0x08,   15 /* Private */,
-      17,    0,  125,    2, 0x08,   16 /* Private */,
+      12,    0,  132,    2, 0x08,   11 /* Private */,
+      13,    0,  133,    2, 0x08,   12 /* Private */,
+      14,    0,  134,    2, 0x08,   13 /* Private */,
+      15,    0,  135,    2, 0x08,   14 /* Private */,
+      16,    0,  136,    2, 0x08,   15 /* Private */,
+      17,    0,  137,    2, 0x08,   16 /* Private */,
+      18,    0,  138,    2, 0x08,   17 /* Private */,
+      19,    0,  139,    2, 0x08,   18 /* Private */,
 
  // signals: parameters
     QMetaType::Void,
@@ -102,8 +106,10 @@ Q_CONSTINIT static const uint qt_meta_data_CLASSdashboardENDCLASS[] = {
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
+    QMetaType::Void,
 
  // slots: parameters
+    QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
     QMetaType::Void,
@@ -136,6 +142,8 @@ Q_CONSTINIT const QMetaObject dashboard::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'emp'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'ezn_khazna'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'disableButtons_signal'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'memberClosedSignal'
@@ -155,6 +163,8 @@ Q_CONSTINIT const QMetaObject dashboard::staticMetaObject = { {
         // method 'safe_click'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'sheet_click'
+        QtPrivate::TypeAndForceComplete<void, std::false_type>,
+        // method 'ezn_slot'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
@@ -172,16 +182,18 @@ void dashboard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         case 3: _t->safe(); break;
         case 4: _t->sheets(); break;
         case 5: _t->emp(); break;
-        case 6: _t->disableButtons_signal(); break;
-        case 7: _t->memberClosedSignal(); break;
-        case 8: _t->user_closed(); break;
-        case 9: _t->member_slot(); break;
-        case 10: _t->user_slot(); break;
-        case 11: _t->pack_slot(); break;
-        case 12: _t->member_enable(); break;
-        case 13: _t->disableButtons(); break;
-        case 14: _t->safe_click(); break;
-        case 15: _t->sheet_click(); break;
+        case 6: _t->ezn_khazna(); break;
+        case 7: _t->disableButtons_signal(); break;
+        case 8: _t->memberClosedSignal(); break;
+        case 9: _t->user_closed(); break;
+        case 10: _t->member_slot(); break;
+        case 11: _t->user_slot(); break;
+        case 12: _t->pack_slot(); break;
+        case 13: _t->member_enable(); break;
+        case 14: _t->disableButtons(); break;
+        case 15: _t->safe_click(); break;
+        case 16: _t->sheet_click(); break;
+        case 17: _t->ezn_slot(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
@@ -230,22 +242,29 @@ void dashboard::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         }
         {
             using _t = void (dashboard::*)();
-            if (_t _q_method = &dashboard::disableButtons_signal; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &dashboard::ezn_khazna; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 6;
                 return;
             }
         }
         {
             using _t = void (dashboard::*)();
-            if (_t _q_method = &dashboard::memberClosedSignal; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &dashboard::disableButtons_signal; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 7;
                 return;
             }
         }
         {
             using _t = void (dashboard::*)();
-            if (_t _q_method = &dashboard::user_closed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (_t _q_method = &dashboard::memberClosedSignal; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
                 *result = 8;
+                return;
+            }
+        }
+        {
+            using _t = void (dashboard::*)();
+            if (_t _q_method = &dashboard::user_closed; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+                *result = 9;
                 return;
             }
         }
@@ -272,13 +291,13 @@ int dashboard::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {
-        if (_id < 16)
+        if (_id < 18)
             qt_static_metacall(this, _c, _id, _a);
-        _id -= 16;
+        _id -= 18;
     } else if (_c == QMetaObject::RegisterMethodArgumentMetaType) {
-        if (_id < 16)
+        if (_id < 18)
             *reinterpret_cast<QMetaType *>(_a[0]) = QMetaType();
-        _id -= 16;
+        _id -= 18;
     }
     return _id;
 }
@@ -320,20 +339,26 @@ void dashboard::emp()
 }
 
 // SIGNAL 6
-void dashboard::disableButtons_signal()
+void dashboard::ezn_khazna()
 {
     QMetaObject::activate(this, &staticMetaObject, 6, nullptr);
 }
 
 // SIGNAL 7
-void dashboard::memberClosedSignal()
+void dashboard::disableButtons_signal()
 {
     QMetaObject::activate(this, &staticMetaObject, 7, nullptr);
 }
 
 // SIGNAL 8
-void dashboard::user_closed()
+void dashboard::memberClosedSignal()
 {
     QMetaObject::activate(this, &staticMetaObject, 8, nullptr);
+}
+
+// SIGNAL 9
+void dashboard::user_closed()
+{
+    QMetaObject::activate(this, &staticMetaObject, 9, nullptr);
 }
 QT_WARNING_POP

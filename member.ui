@@ -18,7 +18,7 @@
   </property>
   <property name="maximumSize">
    <size>
-    <width>1204</width>
+    <width>1280</width>
     <height>916</height>
    </size>
   </property>
@@ -826,8 +826,14 @@
       </size>
      </property>
      <layout class="QGridLayout" name="gridLayout">
+      <property name="leftMargin">
+       <number>2</number>
+      </property>
       <property name="topMargin">
        <number>0</number>
+      </property>
+      <property name="rightMargin">
+       <number>2</number>
       </property>
       <property name="bottomMargin">
        <number>0</number>
@@ -900,6 +906,12 @@
                 <item>
                  <widget class="QWidget" name="widget_24" native="true">
                   <layout class="QHBoxLayout" name="horizontalLayout_21">
+                   <property name="leftMargin">
+                    <number>4</number>
+                   </property>
+                   <property name="rightMargin">
+                    <number>4</number>
+                   </property>
                    <item>
                     <widget class="QWidget" name="widget_25" native="true">
                      <property name="minimumSize">
@@ -909,6 +921,18 @@
                       </size>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_22">
+                      <property name="leftMargin">
+                       <number>2</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>2</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
                       <item alignment="Qt::AlignLeft">
                        <widget class="QLabel" name="label_13">
                         <property name="font">
@@ -921,7 +945,7 @@
                         </property>
                        </widget>
                       </item>
-                      <item alignment="Qt::AlignRight">
+                      <item alignment="Qt::AlignLeft|Qt::AlignVCenter">
                        <widget class="QComboBox" name="pack_combo">
                         <property name="sizePolicy">
                          <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
@@ -954,6 +978,21 @@
                       </sizepolicy>
                      </property>
                      <layout class="QHBoxLayout" name="horizontalLayout_23">
+                      <property name="spacing">
+                       <number>5</number>
+                      </property>
+                      <property name="leftMargin">
+                       <number>2</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>2</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
                       <item>
                        <widget class="QLabel" name="label_14">
                         <property name="sizePolicy">
@@ -991,6 +1030,18 @@
                    <item>
                     <widget class="QWidget" name="widget_27" native="true">
                      <layout class="QHBoxLayout" name="horizontalLayout_24">
+                      <property name="leftMargin">
+                       <number>2</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>2</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
                       <item>
                        <widget class="QLabel" name="label_15">
                         <property name="font">
@@ -1019,6 +1070,18 @@
                    <item>
                     <widget class="QWidget" name="widget_28" native="true">
                      <layout class="QHBoxLayout" name="horizontalLayout_25">
+                      <property name="leftMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
                       <item>
                        <widget class="QLabel" name="label_16">
                         <property name="font">
@@ -1056,6 +1119,18 @@
                    <item>
                     <widget class="QWidget" name="widget_29" native="true">
                      <layout class="QHBoxLayout" name="horizontalLayout_26">
+                      <property name="leftMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
                       <item>
                        <widget class="QLabel" name="label_17">
                         <property name="font">
@@ -1077,8 +1152,25 @@
                    <item>
                     <widget class="QWidget" name="widget_30" native="true">
                      <layout class="QHBoxLayout" name="horizontalLayout_27">
+                      <property name="leftMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
                       <item>
                        <widget class="QLabel" name="label_18">
+                        <property name="font">
+                         <font>
+                          <bold>true</bold>
+                         </font>
+                        </property>
                         <property name="text">
                          <string>End</string>
                         </property>
@@ -1088,6 +1180,49 @@
                        <widget class="QDateEdit" name="pack_end">
                         <property name="readOnly">
                          <bool>true</bool>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QWidget" name="widget_63" native="true">
+                     <layout class="QHBoxLayout" name="horizontalLayout_57">
+                      <property name="leftMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="topMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="rightMargin">
+                       <number>5</number>
+                      </property>
+                      <property name="bottomMargin">
+                       <number>5</number>
+                      </property>
+                      <item>
+                       <widget class="QLabel" name="label_34">
+                        <property name="font">
+                         <font>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="text">
+                         <string>adder:</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QSpinBox" name="adder">
+                        <property name="minimum">
+                         <number>-999</number>
+                        </property>
+                        <property name="maximum">
+                         <number>999</number>
+                        </property>
+                        <property name="singleStep">
+                         <number>1</number>
                         </property>
                        </widget>
                       </item>
@@ -1236,6 +1371,9 @@
                          </item>
                          <item>
                           <widget class="QSpinBox" name="start_shift">
+                           <property name="minimum">
+                            <number>0</number>
+                           </property>
                            <property name="maximum">
                             <number>150</number>
                            </property>

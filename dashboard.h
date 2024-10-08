@@ -21,6 +21,7 @@ public:
     void open_sheet();
     void open_emp();
     void emp_open();
+    void ezn_enaple();
 
 
 signals:
@@ -30,6 +31,7 @@ signals:
     void safe();
     void sheets();
     void emp();
+    void ezn_khazna();
 
     void disableButtons_signal();
     void memberClosedSignal();
@@ -44,6 +46,7 @@ private slots:
     void disableButtons();
     void safe_click();
     void sheet_click();
+    void ezn_slot();
 public:
     Ui::dashboard *ui;
 };

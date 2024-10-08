@@ -63,13 +63,16 @@ dashboard::dashboard(QWidget *parent,bool is_admin)
 
     connect(ui->Emp, &QPushButton::clicked, this, &dashboard::open_emp);
 
+    connect(ui->ezn, &QPushButton::clicked, this, &dashboard::ezn_slot);
+
+
 
     qDebug() << "Connected pushButton_2 to member_slot";
 
 }
 void dashboard::setAdminMode(bool is_admin) {
     bool isAdmin = is_admin;
-    QString imagePath = isAdmin ? ":/login/Active user ✅.jpg" : ":/login/frontdesk.jpeg";
+    QString imagePath = isAdmin ? ":/login/xhale-admin.jpeg" : ":/login/frontdesk.jpeg";
     QPixmap pixmap(imagePath);
     ui->photo->setPixmap(pixmap);
     ui->photo->setScaledContents(true);
@@ -134,6 +137,7 @@ void dashboard::disableButtons(){
     ui->User->setDisabled(true);
     ui->pack->setDisabled(true);
     ui->Emp->setDisabled(true);
+    ui->ezn->setDisabled(true);
 }
 void dashboard::user_enable(){
     ui->User->setEnabled(true);
@@ -165,6 +169,13 @@ void dashboard::open_emp(){
 }
 void dashboard::emp_open(){
     ui->Emp->setEnabled(true);
+}
+void dashboard::ezn_slot(){
+    emit ezn_khazna();
+    ui->ezn->setDisabled(true);
+}
+void dashboard::ezn_enaple(){
+    ui->ezn->setEnabled(true);
 }
 
 dashboard::~dashboard()

@@ -73,6 +73,7 @@ private slots:
     void save_inv();
     void on_invtable_doubleClicked(int row, int column);
     void inv_delete();
+    void add_on_end_date();
 protected:
     void closeEvent(QCloseEvent *event) override;
     bool eventFilter(QObject *obj, QEvent *event) override;

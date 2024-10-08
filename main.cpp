@@ -5,6 +5,7 @@
 #include "packages.h"
 #include "safe.h"
 #include "sheets.h"
+#include "ezn.h"
 #include <QDebug>  // Include QDebug header
 #include <QApplication>
 #include <QRect>
@@ -128,6 +129,18 @@ int main(int argc, char *argv[])
     });
     //emit dash->emp();
 
+    std::unique_ptr<ezn> ezno(new ezn());
+    QObject::connect(dash.get(), &dashboard::ezn_khazna, [&]() {
+        qDebug() << "ezn signal received in main.";
+        QRect screenGeometry = QApplication::primaryScreen()->availableGeometry();
+        int x = (screenGeometry.width() - ezno->width()) / 2;
+        int y = (screenGeometry.height() - ezno->height()) / 2;
+        qDebug() << "Moving sheet widget to (" << x << ", " << y << ")";
+        ezno->move(x, y);
+        ezno->show();
+    });
+    emit dash->ezn_khazna();
+
 
 
 
@@ -141,6 +154,8 @@ int main(int argc, char *argv[])
     QObject::connect(sheet.get(), &sheets::closed, dash.get(), &dashboard::open_sheet);
     QObject::connect(pack.get(), &packages::added, mem.get(), &Member::update_packages);
     QObject::connect(empo.get(), &emp::employee, mem.get(), &Member::emplyee_capturred);
+    QObject::connect(ezno.get(), &ezn::ezn_closed, dash.get(), &dashboard::ezn_enaple);
+
 
 
 

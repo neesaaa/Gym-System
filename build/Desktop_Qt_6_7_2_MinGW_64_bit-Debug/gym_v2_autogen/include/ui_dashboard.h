@@ -35,6 +35,7 @@ public:
     QPushButton *Emp;
     QPushButton *pack;
     QPushButton *User;
+    QPushButton *ezn;
     QPushButton *sheet;
 
     void setupUi(QWidget *dashboard)
@@ -151,6 +152,18 @@ public:
 
         verticalLayout->addWidget(User);
 
+        ezn = new QPushButton(btns);
+        ezn->setObjectName("ezn");
+        ezn->setMinimumSize(QSize(0, 40));
+        ezn->setFont(font);
+        ezn->setLayoutDirection(Qt::RightToLeft);
+        QIcon icon5;
+        icon5.addFile(QString::fromUtf8(":/login/cash-payment.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        ezn->setIcon(icon5);
+        ezn->setIconSize(QSize(36, 36));
+
+        verticalLayout->addWidget(ezn);
+
         sheet = new QPushButton(btns);
         sheet->setObjectName("sheet");
         sizePolicy1.setHeightForWidth(sheet->sizePolicy().hasHeightForWidth());
@@ -158,9 +171,9 @@ public:
         sheet->setMinimumSize(QSize(0, 40));
         sheet->setFont(font);
         sheet->setLayoutDirection(Qt::RightToLeft);
-        QIcon icon5;
-        icon5.addFile(QString::fromUtf8(":/login/document.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
-        sheet->setIcon(icon5);
+        QIcon icon6;
+        icon6.addFile(QString::fromUtf8(":/login/document.png"), QSize(), QIcon::Mode::Normal, QIcon::State::Off);
+        sheet->setIcon(icon6);
         sheet->setIconSize(QSize(36, 36));
 
         verticalLayout->addWidget(sheet);
@@ -182,6 +195,7 @@ public:
         safe->setText(QCoreApplication::translate("dashboard", "    \330\247\331\204\330\256\330\262\331\206\330\251  ", nullptr));
         Emp->setText(QCoreApplication::translate("dashboard", "   Emp", nullptr));
         pack->setText(QCoreApplication::translate("dashboard", "New Package", nullptr));
+        ezn->setText(QCoreApplication::translate("dashboard", "\330\247\330\260\331\206 \330\256\330\262\331\206\330\251", nullptr));
         sheet->setText(QCoreApplication::translate("dashboard", "Sheets  ", nullptr));
     } // retranslateUi
 

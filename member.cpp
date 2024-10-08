@@ -142,14 +142,11 @@ Member::Member(QWidget *parent)
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 
-    db.setDatabaseName("DRIVER={ODBC Driver 18 for SQL Server};"
-                       "SERVER=DESKTOP-9L5QUCK;"
-                       "DATABASE=Number1;"
-                       "UID=sa;"
-                       "PWD=p@ssw0rd;"
-                       "TrustServerCertificate=yes;"
-                       "Integrated Security=false;");
-
+    db.setDatabaseName("DRIVER={ODBC Driver 17 for SQL Server};"
+                       "SERVER=LAPTOP-ONHG8FN6;"
+                       "DATABASE=zktecho;"
+                       "UID=nesa;"
+                       "PWD=123698745");
 
     // Open the connection
     if (!db.open()) {
@@ -252,6 +249,8 @@ Member::Member(QWidget *parent)
     connect(ui->pack_dis, SIGNAL(textChanged(const QString &)), this, SLOT(onPayDiscChanged(const QString &)));
     // Assuming this is in your constructor or initialization function
     connect(ui->start_shift, QOverload<int>::of(&QSpinBox::valueChanged), this, &Member::change_in_shift);
+    connect(ui->adder, QOverload<int>::of(&QSpinBox::valueChanged), this, &Member::add_on_end_date);
+
     ui->all->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->freeze_table->setEditTriggers(QAbstractItemView::NoEditTriggers);
     ui->specs_pack->setEditTriggers(QAbstractItemView::NoEditTriggers);
@@ -260,8 +259,8 @@ Member::Member(QWidget *parent)
 
 
     //freeze
-    ui->freeze_start->setDate(QDate::currentDate().addDays(1));
-    ui->freeze->setDate(QDate::currentDate().addDays(1));
+    ui->freeze_start->setDate(QDate::currentDate());
+    ui->freeze->setDate(QDate::currentDate());
 
 
     blockSignalsFlag=false;
@@ -401,7 +400,7 @@ Member::Member(QWidget *parent)
 
 
 
-
+    ui->freezebox->setDisabled(true);
 
 }
 
@@ -1628,6 +1627,20 @@ void Member::pack_save() {
     QString package_name = ui->pack_combo->currentText();
     int customer_id = ui->id->text().toInt();  // Assuming ui->id_ represents customer id
 
+    QSqlQuery checker;
+    checker.prepare("SELECT COUNT(*) FROM customer WHERE id = :id");
+    checker.bindValue(":id", customer_id);
+
+    if (checker.exec()) {
+        checker.next(); // Move to the first (and only) result
+
+        int count = checker.value(0).toInt();
+        if (count == 0) {
+            // Customer does not exist, trigger save button click
+            ui->save->click();
+        }
+    }
+
     QSqlQuery packquery;
     packquery.prepare("SELECT id , inbody, spa , inv, freezze, pt, count  FROM package_on_desk WHERE name = :name");
     packquery.bindValue(":name", package_name);
@@ -1785,7 +1798,7 @@ void Member::pack_save() {
         return;
     }
 
-    QMessageBox::information(this, "Success", "Package inserted successfully.");
+    // QMessageBox::information(this, "Success", "payment inserted successfully.");
     ui->show->click();
     package_id = -1;
 
@@ -2156,7 +2169,7 @@ void Member::pack_delete() {
 void Member::updateEndDate(const QDate &startDate ) {
     // Assuming ui->pack_end is also a QDateEdit widget
     // Calculate end date as per your application logic, e.g., adding a month
-    QDate endDate = startDate.addDays(duration_package); // Example: end date is one month after start date
+    QDate endDate = startDate.addDays(duration_package+ui->adder->value()); // Example: end date is one month after start date
 
     ui->pack_end->setDate(endDate); // Set the calculated end date in ui->pack_end
 }
@@ -2419,7 +2432,7 @@ void Member::save_freeze_slot() {
     }
 
     // 4. Generate a new freeze schedule ID
-    int freezeScheduleId;
+    int freezeScheduleId=0;
     // Insert into freeze_schedule table
     QSqlQuery idmax;
     idmax.prepare("SELECT MAX(id) FROM freeze_schedule");// Function to generate new ID
@@ -2453,7 +2466,7 @@ void Member::save_freeze_slot() {
     query.bindValue(":count", requestedFreezeDays); // Set initial value for count column
 
     QSqlQuery endDateQuery;
-    endDateQuery.prepare("SELECT end_date FROM package WHERE id = :packageId ");
+    endDateQuery.prepare("SELECT end_date FROM paackage WHERE id = :packageId ");
     endDateQuery.bindValue(":packageId", packageId);
 
     if (!endDateQuery.exec() || !endDateQuery.first()) {
@@ -3465,6 +3478,7 @@ void Member::front_setter(){
     ui->pt_discount->setDisabled(true);
     ui->freez_delete->setDisabled(true);
     ui->freeze_edit->setDisabled(true);
+    ui->adder->setDisabled(true);
 
 }
 void Member::update_packages(){
@@ -3490,6 +3504,7 @@ void Member::update_packages(){
     connect(ui->pack_combo, SIGNAL(currentIndexChanged(int)), this, SLOT(onPackComboBoxSelectionChanged(int)));
 
 }
+
 void Member::emplyee_capturred(){
     QSqlQuery salesQuery;
     salesQuery.prepare("SELECT name FROM saales");
@@ -3522,6 +3537,28 @@ void Member::emplyee_capturred(){
     }
 
 }
-
+void Member::add_on_end_date(){
+    int shift=ui->adder->value();
+    QSqlQuery query;
+    query.prepare("SELECT duration FROM package_on_desk WHERE name = :packName");
+    query.bindValue(":packName", ui->pack_combo->currentText().trimmed());  // Bind the package name from the UI
+    int duration=0;
+    if (!query.exec()) {
+        qDebug() << "Query execution error: " << query.lastError();
+    } else {
+        if (query.next()) {
+            duration = query.value("duration").toInt();
+            qDebug() << "Package Duration:" << duration;
+        } else {
+            qDebug() << "No package found with the given name.";
+        }
+    }
+    if(duration<=(-1*shift)){
+        QMessageBox::critical(this,"as7aaaaaaaaaaaaaaa","انت بتحاول تشيل ايام اكتر من مده الباكديج اصلا");
+        ui->adder->setValue(ui->adder->value()+1);
+        return;
+    }
+    ui->pack_end->setDate(ui->pack_start->date().addDays(duration+shift));
+}
 
 

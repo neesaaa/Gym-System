@@ -54,5 +54,8 @@
         <file>employee.png</file>
         <file>arrow-down.png</file>
         <file>frontdesk.jpeg</file>
+        <file>xhale.jpeg</file>
+        <file>xhale-admin.jpeg</file>
+        <file>cash-payment.png</file>
     </qresource>
 </RCC>

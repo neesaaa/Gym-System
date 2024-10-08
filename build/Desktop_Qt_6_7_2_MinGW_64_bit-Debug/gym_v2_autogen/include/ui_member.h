@@ -125,6 +125,10 @@ public:
     QHBoxLayout *horizontalLayout_27;
     QLabel *label_18;
     QDateEdit *pack_end;
+    QWidget *widget_63;
+    QHBoxLayout *horizontalLayout_57;
+    QLabel *label_34;
+    QSpinBox *adder;
     QWidget *widget_23;
     QHBoxLayout *horizontalLayout_28;
     QWidget *widget_32;
@@ -293,7 +297,7 @@ public:
         sizePolicy.setVerticalStretch(0);
         sizePolicy.setHeightForWidth(Member->sizePolicy().hasHeightForWidth());
         Member->setSizePolicy(sizePolicy);
-        Member->setMaximumSize(QSize(1204, 916));
+        Member->setMaximumSize(QSize(1280, 916));
         verticalLayout = new QVBoxLayout(Member);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(-1, 3, -1, 3);
@@ -700,7 +704,7 @@ public:
         widget_2->setMaximumSize(QSize(1182, 380));
         gridLayout = new QGridLayout(widget_2);
         gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(-1, 0, -1, 0);
+        gridLayout->setContentsMargins(2, 0, 2, 0);
         tabWidget = new QTabWidget(widget_2);
         tabWidget->setObjectName("tabWidget");
         tabWidget->setTabPosition(QTabWidget::North);
@@ -727,11 +731,13 @@ public:
         widget_24->setObjectName("widget_24");
         horizontalLayout_21 = new QHBoxLayout(widget_24);
         horizontalLayout_21->setObjectName("horizontalLayout_21");
+        horizontalLayout_21->setContentsMargins(4, -1, 4, -1);
         widget_25 = new QWidget(widget_24);
         widget_25->setObjectName("widget_25");
         widget_25->setMinimumSize(QSize(160, 0));
         horizontalLayout_22 = new QHBoxLayout(widget_25);
         horizontalLayout_22->setObjectName("horizontalLayout_22");
+        horizontalLayout_22->setContentsMargins(2, 5, 2, 5);
         label_13 = new QLabel(widget_25);
         label_13->setObjectName("label_13");
         QFont font3;
@@ -750,7 +756,7 @@ public:
         pack_combo->setMinimumSize(QSize(100, 0));
         pack_combo->setFont(font1);
 
-        horizontalLayout_22->addWidget(pack_combo, 0, Qt::AlignRight);
+        horizontalLayout_22->addWidget(pack_combo, 0, Qt::AlignLeft|Qt::AlignVCenter);
 
 
         horizontalLayout_21->addWidget(widget_25);
@@ -760,7 +766,9 @@ public:
         sizePolicy1.setHeightForWidth(widget_26->sizePolicy().hasHeightForWidth());
         widget_26->setSizePolicy(sizePolicy1);
         horizontalLayout_23 = new QHBoxLayout(widget_26);
+        horizontalLayout_23->setSpacing(5);
         horizontalLayout_23->setObjectName("horizontalLayout_23");
+        horizontalLayout_23->setContentsMargins(2, 5, 2, 5);
         label_14 = new QLabel(widget_26);
         label_14->setObjectName("label_14");
         QSizePolicy sizePolicy9(QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Preferred);
@@ -787,6 +795,7 @@ public:
         widget_27->setObjectName("widget_27");
         horizontalLayout_24 = new QHBoxLayout(widget_27);
         horizontalLayout_24->setObjectName("horizontalLayout_24");
+        horizontalLayout_24->setContentsMargins(2, 5, 2, 5);
         label_15 = new QLabel(widget_27);
         label_15->setObjectName("label_15");
         label_15->setFont(font3);
@@ -807,6 +816,7 @@ public:
         widget_28->setObjectName("widget_28");
         horizontalLayout_25 = new QHBoxLayout(widget_28);
         horizontalLayout_25->setObjectName("horizontalLayout_25");
+        horizontalLayout_25->setContentsMargins(5, 5, 5, 5);
         label_16 = new QLabel(widget_28);
         label_16->setObjectName("label_16");
         label_16->setFont(font3);
@@ -829,6 +839,7 @@ public:
         widget_29->setObjectName("widget_29");
         horizontalLayout_26 = new QHBoxLayout(widget_29);
         horizontalLayout_26->setObjectName("horizontalLayout_26");
+        horizontalLayout_26->setContentsMargins(5, 5, 5, 5);
         label_17 = new QLabel(widget_29);
         label_17->setObjectName("label_17");
         label_17->setFont(font3);
@@ -847,8 +858,10 @@ public:
         widget_30->setObjectName("widget_30");
         horizontalLayout_27 = new QHBoxLayout(widget_30);
         horizontalLayout_27->setObjectName("horizontalLayout_27");
+        horizontalLayout_27->setContentsMargins(5, 5, 5, 5);
         label_18 = new QLabel(widget_30);
         label_18->setObjectName("label_18");
+        label_18->setFont(font3);
 
         horizontalLayout_27->addWidget(label_18);
 
@@ -860,6 +873,28 @@ public:
 
 
         horizontalLayout_21->addWidget(widget_30);
+
+        widget_63 = new QWidget(widget_24);
+        widget_63->setObjectName("widget_63");
+        horizontalLayout_57 = new QHBoxLayout(widget_63);
+        horizontalLayout_57->setObjectName("horizontalLayout_57");
+        horizontalLayout_57->setContentsMargins(5, 5, 5, 5);
+        label_34 = new QLabel(widget_63);
+        label_34->setObjectName("label_34");
+        label_34->setFont(font3);
+
+        horizontalLayout_57->addWidget(label_34);
+
+        adder = new QSpinBox(widget_63);
+        adder->setObjectName("adder");
+        adder->setMinimum(-999);
+        adder->setMaximum(999);
+        adder->setSingleStep(1);
+
+        horizontalLayout_57->addWidget(adder);
+
+
+        horizontalLayout_21->addWidget(widget_63);
 
 
         verticalLayout_6->addWidget(widget_24);
@@ -926,6 +961,7 @@ public:
 
         start_shift = new QSpinBox(widget_35);
         start_shift->setObjectName("start_shift");
+        start_shift->setMinimum(0);
         start_shift->setMaximum(150);
 
         horizontalLayout_31->addWidget(start_shift);
@@ -1728,6 +1764,7 @@ public:
         label_16->setText(QCoreApplication::translate("Member", "Net", nullptr));
         label_17->setText(QCoreApplication::translate("Member", "Start", nullptr));
         label_18->setText(QCoreApplication::translate("Member", "End", nullptr));
+        label_34->setText(QCoreApplication::translate("Member", "adder:", nullptr));
         pay_type_2->setItemText(0, QCoreApplication::translate("Member", "Cash", nullptr));
         pay_type_2->setItemText(1, QCoreApplication::translate("Member", "Vodafone", nullptr));
         pay_type_2->setItemText(2, QCoreApplication::translate("Member", "Fawary", nullptr));

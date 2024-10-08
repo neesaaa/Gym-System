@@ -51,6 +51,7 @@ qt_add_executable(gym_v2
     ${PROJECT_SOURCES}
     search.h search.cpp search.ui
     emp.h emp.cpp emp.ui
+    ezn.h ezn.cpp ezn.ui
 )
 
 # Link necessary Qt modules and ODBC library to the executable

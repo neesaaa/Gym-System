@@ -15,13 +15,11 @@ sheets::sheets(QWidget *parent)
 
     QSqlDatabase db = QSqlDatabase::addDatabase("QODBC");
 
-    db.setDatabaseName("DRIVER={ODBC Driver 18 for SQL Server};"
-                       "SERVER=DESKTOP-9L5QUCK;"
-                       "DATABASE=Number1;"
-                       "UID=sa;"
-                       "PWD=p@ssw0rd;"
-                       "TrustServerCertificate=yes;"
-                       "Integrated Security=false;");
+    db.setDatabaseName("DRIVER={ODBC Driver 17 for SQL Server};"
+                       "SERVER=LAPTOP-ONHG8FN6;"
+                       "DATABASE=zktecho;"
+                       "UID=nesa;"
+                       "PWD=123698745");
 
 
     // Open the connection
